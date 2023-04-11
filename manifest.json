@@ -1,0 +1,62 @@
+{
+  "name": "OFFTHEGRID VPN AD BLOCKER",
+  "description": "Use VPN(username:harpreetsingh0221, password:xJqZmaIzHY), and Block ads and pop-ups on websites such as YouTube and Twitch.",
+  "version": "1.0.1",
+  "default_locale": "en",
+  "manifest_version": 3,
+  "icons": {
+    "16": "./images/icon16.png",
+    "48": "./images/icon48.png",
+    "128": "./images/icon128.png"
+  },
+  "background": {
+    "service_worker": "./background.js"
+  },
+  "action": {
+    "default_popup": "./popup.html",
+    "default_icons": {
+      "16": "./images/icon16.png",
+      "48": "./images/icon48.png",
+      "128": "./images/icon128.png"
+    }
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "proxy",
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "tabs"
+  ],
+  "host_permissions": ["https://*/*", "http://*/*"],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": false,
+        "path": "rules/rules.json"
+      },
+      {
+        "id": "ruleset_2",
+        "enabled": false,
+        "path": "rules/rules1.json"
+      }
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*", "https://www.twitch.tv/*"],
+      "js": ["content/script.js"]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'; script-src-elem 'self' 'unsafe-inline' https://www.paypal.com/;"
+  },
+  "web_accessible_resources": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "use_dynamic_url": true,
+      "resources": ["src/web-accessible-resources/*"]
+    }
+  ]
+}

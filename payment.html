@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OFFTHEGRID</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/stylesheets/payment.css" />
+  </head>
+  <body>
+    <header>
+      <img src="./assets/images/Group 8.png" alt="" />
+    </header>
+    <section>
+      <div class="left">
+        <h2>THE HONOR SYSTEM</h2>
+        <h3>
+          Welcome to OffTheGrid Ad Blocker System.
+          <span
+            >Hi from the OffTheGrid Ad Block Team, we hope you enjoy using our
+            Ad Block!</span
+          >
+        </h3>
+        <p>
+          OffTheGrid AdBlocker is honor-ware, which means that we trust each
+          other to be nice:
+        </p>
+        <ul>
+          <li>
+            You pay what you can afford for AdBlock. We let you choose the
+            price.
+          </li>
+          <li>
+            You get a refund - and you can keep AdBlock - if you don't love it.
+          </li>
+        </ul>
+        <p>
+          AdBlock has full time employees that depend on your contributions and
+          support. Please pay as much as you can, since if you change your mind
+          you have 60 days to get a refund!
+        </p>
+      </div>
+      <div class="right"><img src="./assets/images/image 1.png" alt="" /></div>
+    </section>
+    <section class="col">
+      <div class="row">
+        <h3>Name a Fair Price:</h3>
+        <select class="currency" name="currency" id="currency">
+          <option value="USD">USD</option>
+          <option value="CHF">CHF</option>
+          <option value="CAD">CAD</option>
+          <option value="JPY">JPY</option>
+          <option value="RUB">RUB</option>
+        </select>
+      </div>
+      <table>
+        <tr>
+          <td class="payment">Make a one time contribution</td>
+          <td class="price1">
+            <ul>
+              <li>
+                <input class="checkbox" type="checkbox" name="5" id="" />
+                <span>$5</span>
+              </li>
+              <li>
+                <input class="checkbox" type="checkbox" name="10" id="" />
+                <span>$10</span>
+              </li>
+              <li>
+                <input class="checkbox" type="checkbox" name="20" id="" />
+                <span>$20</span>
+              </li>
+              <li>
+                <input class="checkbox" type="checkbox" name="35" id="" />
+                <span>$35</span>
+              </li>
+              <li>
+                <input class="checkbox" type="checkbox" name="50" id="" />
+                <span>$50</span>
+              </li>
+              <li>
+                <span>$</span>
+                <input class="textbox" type="text" name="five" id="" />
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="payment">or a monthly contribution</td>
+          <td class="price2">
+            <ul>
+              <li>
+                <input class="checkbox" type="checkbox" name="5" id="" />
+                <span>$5</span>
+              </li>
+              <li>
+                <input class="checkbox" type="checkbox" name="10" id="" />
+                <span>$10</span>
+              </li>
+              <li>
+                <input class="checkbox" type="checkbox" name="20" id="" />
+                <span>$20</span>
+              </li>
+              <li>
+                <input class="checkbox" type="checkbox" name="35" id="" />
+                <span>$35</span>
+              </li>
+              <li>
+                <input class="checkbox" type="checkbox" name="50" id="" />
+                <span>$50</span>
+              </li>
+              <li>
+                <span>$</span>
+                <input class="textbox" type="text" name="five" id="" />
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="payment">or a yearly contribution</td>
+          <td class="price1">
+            <ul>
+              <li>
+                <input class="checkbox" type="checkbox" name="5" id="" />
+                <span>$5</span>
+              </li>
+              <li>
+                <input class="checkbox" type="checkbox" name="10" id="" />
+                <span>$10</span>
+              </li>
+              <li>
+                <input class="checkbox" type="checkbox" name="20" id="" />
+                <span>$20</span>
+              </li>
+              <li>
+                <input class="checkbox" type="checkbox" name="35" id="" />
+                <span>$35</span>
+              </li>
+              <li>
+                <input class="checkbox" type="checkbox" name="50" id="" />
+                <span>$50</span>
+              </li>
+              <li>
+                <span>$</span>
+                <input class="textbox" type="text" name="five" id="" />
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+      <div class="row pay">
+        <span>Pay With: </span>
+
+        <button class="button" id="stripe-button" href="#"
+          ><img src="./assets/images/stripe.png" alt="" srcset=""
+        /></button>
+        <button
+          class="button paypal"
+          href="#"
+          id="paypal-button"
+          >
+          <img src="./assets/images/paypal.png" alt="" srcset=""/>
+      </button>
+      </div>
+    </section>
+    <section class="col">
+      <h3 class="contact">Help is just an email away</h3>
+      <p class="support">
+        If you ever need us, please CONTACT our support email,
+        otgadblock@gmail.com Thanks again for choosing our OFFTHEGRID AdBlocker.
+        Happy browsing!<br /><br />
+        Love,<br />The OFFTHEGRID AdBlock Team
+      </p>
+    </section>
+    <footer>OFFTHEGRID- AD BLOCKER @2023 For Chrome</footer>
+    <script src="./jquery.js"></script>
+    <script src="./payment.js"></script>
+</html>

@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 340px;
+  width: 300px;
+}
+
+.container {
+  background: linear-gradient(
+    180deg,
+    rgba(38, 43, 81, 0.5) 0%,
+    rgba(255, 255, 255, 0.5) 47.92%,
+    rgba(227, 227, 227, 0.5) 100%
+  );
+
+  
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container img {
+  mix-blend-mode: multiply;
+  width: 44%;
+}
+
+.payment {
+  text-decoration: none;
+  text-align: center;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 17px;
+  color: #244362;
+  margin: 16px;
+}
+
+.payment a {
+  color: #244362;
+}
+
+.adblock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+  border: 2px solid #cbcbcb;
+  height: 28px;
+  /* width: 100%; */
+  border-radius: 100px;
+  padding: 4px 16px;
+}
+
+.adblock h3 {
+  font-family: "Montserrat";
+  font-style: normal;
+  /* width: 50%; */
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  /* identical to box height */
+  color: #244362;
+}
+
+.footer {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 9.1px;
+  line-height: 11px;
+  color: #244362;
+  margin-top: 16px;
+}
+
+.box {
+  /* width: 50%; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.switch {
+  /* switch-body */
+  position: relative;
+  background: #f22828;
+  border-radius: 50px;
+  width: 50px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* .switch::before {
+  background: linear-gradient(180deg, #ffffff 0%, #e8eaea 100%);
+  display: inline-block;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+} */
+
+.switch::before {
+  background-color: white;
+  position: absolute;
+  content: "";
+  /* display: none; */
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin: 2.5px 5px;
+}
+
+input:checked + .switch {
+  background-color: #25f75d;
+}
+
+input:checked + .switch::before {
+  transform: translateX(25px);
+  transition: .3s all;
+}
+
+input {
+  display: none;
+}

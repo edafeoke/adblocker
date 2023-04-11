@@ -1,0 +1,306 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  background: #ffffff;
+  color: #244362;
+  padding-left: 20px;
+  position: relative;
+}
+
+header {
+  margin: 20px;
+  margin-bottom: 0px;
+}
+
+section {
+  display: flex;
+  width: 100%;
+  font-family: Montserrat;
+  text-align: left;
+}
+
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.left h2 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 10px 20px;
+  color: #244362;
+  align-self: flex-start;
+}
+
+.left h3 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 10px 20px;
+}
+
+.left h3 span {
+  display: block;
+  margin: 10px 0px;
+  font-weight: 500;
+  /* font-weight: 600; */
+}
+
+.left p,
+.left ul {
+  margin: 10px 20px;
+  list-style: none;
+}
+
+.left p {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.left ul {
+  font-weight: 600;
+}
+
+.left ul li {
+  margin-bottom: 8px;
+}
+
+.left ul li::before {
+  margin-left: 0px;
+  content: "\2022";
+  color: #244362;
+  font-weight: 600;
+  display: inline-block;
+  width: 0.5em;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.right img {
+  width: 70%;
+}
+
+.col {
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  margin: 8px 0;
+}
+
+.row h3 {
+  display: inline-block;
+}
+
+.currency {
+  margin-left: 8px;
+  padding: 10px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  border: none;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #244362;
+}
+
+.currency option:nth-child(1) {
+  padding: 10px;
+  background: #eae7e7;
+}
+
+.currency option:nth-child(2) {
+  background: #ddd;
+  padding: 10px;
+}
+
+.currency option:nth-child(3) {
+  background: #d0ddff;
+}
+
+.currency option:nth-child(4) {
+  background: #c4d7e9;
+}
+
+.currency option:nth-child(5) {
+  background: #afcfee;
+}
+
+.currency option:nth-child(6) {
+  background: #b2c5d7;
+}
+
+.currency:focus,
+.currency:active {
+  border: none;
+}
+
+table {
+  width: 100%;
+}
+
+td {
+  padding: 16px;
+  margin: 5px 0;
+}
+table tr .payment {
+  color: #244362;
+  font-weight: 600;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 30%;
+}
+
+table tr .price1 {
+  width: 80%;
+  background-color: #244463;
+  display: flex;
+  flex-direction: row;
+  color: #fff;
+  border-radius: 5px;
+}
+
+table tr .price2 {
+  width: 80%;
+  background: #1f7aa0;
+  display: flex;
+  flex-direction: row;
+  color: #fff;
+  border-radius: 5px;
+}
+table tr .price1 ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+table tr .price2 ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.table ul li input[type="checkbox"] {
+  background-color: #476786;
+}
+
+.price1,
+.price2 {
+  display: flex;
+  width: 40%;
+}
+
+.price1 ul,
+.price2 ul {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  /* color: white; */
+  background-color: #476786;
+  border: none;
+  width: 25px;
+  padding: 4px;
+  border-radius: 2px;
+}
+
+input[type="checkbox"] {
+  /* color: white; */
+  accent-color: #18ffff;
+}
+
+.paypal {
+  background: #fed512;
+
+}
+
+button:active {
+  transform: scale(.95);
+}
+.button {
+  width: 228px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px;
+  cursor: pointer;
+  border: none;
+}
+
+form {
+  width: 228px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px;
+  cursor: pointer;
+  border: none;
+}
+
+.button img {
+  width: 50%;
+}
+
+form img {
+  width: 200px;
+}
+
+.contact {
+  margin: 10px 0 0;
+  font-weight: 700;
+  font-size: 16px;
+  justify-content: flex-start;
+  font-family: "Montserrat";
+}
+
+.pay {
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.support {
+  margin: 10px 0px;
+}
+
+.textbox {
+  color: #fff;
+}
+
+footer {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  margin: 16px 0;
+  text-align: center;
+  color: #244362;
+}
+
