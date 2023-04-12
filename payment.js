@@ -98,6 +98,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     })
       .then((res) => res.json())
       .then(({ url }) => {
+        console.log(url);
         window.location = url;
       })
       .catch((e) => {

@@ -76,8 +76,8 @@ app.post("/paypal/pay", async (req, res) => {
       payment_method: "paypal",
     },
     redirect_urls: {
-      return_url: `${SERVER}:${process.env.PORT}/success`,
-      cancel_url: `${SERVER}:${process.env.PORT}/cancel`,
+      return_url: `${SERVER}/success`,
+      cancel_url: `${SERVER}/cancel`,
     },
     transactions: [
       {
@@ -161,8 +161,8 @@ app.post("/pay", (req, res) => {
       execute_payment_json,
       function (error, payment) {
         if (error) {
-          console.log(error.response);
-          res.status(500).json({error:'something went wrong - Paypal'})
+          console.log(error.message);
+          res.status(500).json({error:error.message})
         } else {
           console.log(JSON.stringify(payment));
           res.send("Success");
@@ -173,12 +173,11 @@ app.post("/pay", (req, res) => {
 
   paypal.payment.create(create_payment_json, function (error, payment) {
     if (error) {
-      res.status(500).json({error})
+      res.status(500).json({error:error.message})
       // throw error;
     } else {
       for (let i = 0; i < payment.links.length; i++) {
         if (payment.links[i].rel === "approval_url") {
-          console.log(payment.links[i].href);
           res.json({url:payment.links[i].href})
         }
       }
