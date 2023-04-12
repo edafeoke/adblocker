@@ -115,8 +115,8 @@ app.post("/pay", (req, res) => {
       payment_method: "paypal",
     },
     redirect_urls: {
-      return_url: `${SERVER}/success`,
-      cancel_url: `${SERVER}/cancel`,
+      return_url: `${SERVER}/paypal/success`,
+      cancel_url: `${SERVER}/paypal/cancel`,
     },
     transactions: [
       {
@@ -140,7 +140,7 @@ app.post("/pay", (req, res) => {
     ],
   };
 
-  app.get("/success", (req, res) => {
+  app.get("/paypal/success", (req, res) => {
     const payerId = req.query.PayerID;
     const paymentId = req.query.paymentId;
 
@@ -185,7 +185,7 @@ app.post("/pay", (req, res) => {
   });
 });
 
-app.get("/cancel", (req, res) => res.send("Cancelled"));
+app.get("/paypal/cancel", (req, res) => res.send("Cancelled"));
 
 app.listen(process.env.PORT, () =>
   console.log(`Listening to port ${process.env.PORT}`)
