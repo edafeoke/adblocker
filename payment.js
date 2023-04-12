@@ -1,4 +1,4 @@
-const server = 'https://offgrid-adblocker.herokuapp.com:7000'
+const server = 'https://offgrid-adblocker.herokuapp.com'
 // const server = "http://127.0.0.1:7000";
 
 document.addEventListener("DOMContentLoaded", async () => {
