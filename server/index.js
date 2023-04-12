@@ -54,8 +54,8 @@ app.post("/stripe/pay", async (req, res) => {
         },
       ],
       mode: "payment",
-      success_url: `${SERVER}:${PORT}/success`,
-      cancel_url: `${SERVER}:${PORT}/cancel`,
+      success_url: `${SERVER}/success`,
+      cancel_url: `${SERVER}/cancel`,
     });
     res.json({ id: session.id, url: session.url });
   } catch (error) {
