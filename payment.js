@@ -1,4 +1,5 @@
-const server = 'https://offgrid-adblocker.herokuapp.com'
+// const server = 'https://offgrid-adblocker.herokuapp.com'
+const server = "http://127.0.0.1:7000";
 
 document.addEventListener("DOMContentLoaded", async () => {
   const checkboxes = Array.prototype.slice.call(
@@ -31,8 +32,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       }, 0);
     price = parseFloat(price) + parseFloat(price2);
     if (!price) {
-      alert("Price cannot be empty")
-      return
+      alert("Price cannot be empty");
+      return;
     }
     fetch(`${server}/stripe/pay`, {
       method: "POST",
@@ -51,7 +52,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       .then(({ url }) => {
         window.location = url;
       })
-      .catch((e) => console.log(e));
+      .catch((e) => {
+        console.log(e.message);
+        alert(e.message);
+      });
   });
 
   // Paypal payment integration
@@ -75,12 +79,12 @@ document.addEventListener("DOMContentLoaded", async () => {
       }, 0);
     price = parseFloat(price) + parseFloat(price2);
     if (!price) {
-      alert("Price cannot be empty")
-      return
+      alert("Price cannot be empty");
+      return;
     }
-    paypalCheckout(price, currency)
+    paypalCheckout(price, currency);
   });
-  const paypalCheckout = (price, currency)=>{
+  const paypalCheckout = (price, currency) => {
     fetch(`${server}/pay`, {
       method: "POST",
       headers: {
@@ -91,11 +95,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         currency,
       }),
     })
-    .then(res=>res.json())
-    .then(({url})=> {
-      window.location=url
-    })
-    .catch(err=>console.log(err))
-  }
-
+      .then((res) => res.json())
+      .then(({ url }) => {
+        window.location = url;
+      })
+      .catch((e) => {
+        console.log(e.message);
+        alert(e.message);
+      });
+  };
 });

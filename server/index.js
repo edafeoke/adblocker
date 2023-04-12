@@ -16,11 +16,11 @@ const app = express();
 const SERVER = process.env.SERVER_URL
 // Middlewares here
 app.use(express.json());
-// app.use(
-//   cors({
-//     origin: `${SERVER}:5500`,
-//   })
-// );
+app.use(
+  cors({
+    origin: `${SERVER}:5500`,
+  })
+);
 
 // Routes here
 app.get("/", (req, res) => {
