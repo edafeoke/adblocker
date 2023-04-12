@@ -115,8 +115,8 @@ app.post("/pay", (req, res) => {
       payment_method: "paypal",
     },
     redirect_urls: {
-      return_url: `${SERVER}:${process.env.PORT}/success`,
-      cancel_url: `${SERVER}:${process.env.PORT}/cancel`,
+      return_url: `${SERVER}/success`,
+      cancel_url: `${SERVER}/cancel`,
     },
     transactions: [
       {
