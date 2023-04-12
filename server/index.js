@@ -64,46 +64,10 @@ app.post("/stripe/pay", async (req, res) => {
   }
 });
 
-app.post("/paypal/pay", async (req, res) => {
-  const { price, currency } = req.body;
-  if (!price || !currency) {
-    console.log("Missing params");
-    res.status(400).json({error:'Missing price, please specify a price'});
-  }
-  const create_payment_json = {
-    intent: "sale",
-    payer: {
-      payment_method: "paypal",
-    },
-    redirect_urls: {
-      return_url: `${SERVER}/success`,
-      cancel_url: `${SERVER}/cancel`,
-    },
-    transactions: [
-      {
-        item_list: {
-          items: [
-            {
-              name: "Donation",
-              sku: "001",
-              price,
-              currency,
-              quantity: 1,
-            },
-          ],
-        },
-        amount: {
-          currency,
-          total: price,
-        },
-        description: "Make a donation",
-      },
-    ],
-  };
-  
-});
+
 
 app.post("/pay", (req, res) => {
+  console.warn(process.env.SERVER_URL)
   const { price, currency } = req.body;
   if (!price || !currency) {
     console.log("Missing params");
