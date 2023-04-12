@@ -188,6 +188,7 @@ app.post("/pay", (req, res) => {
 
 app.get("/cancel", (req, res) => res.send("Cancelled"));
 
-app.listen(process.env.PORT, () =>
+// app.listen(process.env.PORT, () =>
+app.listen(7000, () =>
   console.log(`Listening to port ${process.env.PORT}`)
 );
