@@ -1,5 +1,5 @@
-// const server = 'https://offgrid-adblocker.herokuapp.com'
-const server = "http://127.0.0.1:7000";
+const server = 'https://offgrid-adblocker.herokuapp.com'
+// const server = "http://127.0.0.1:7000";
 
 document.addEventListener("DOMContentLoaded", async () => {
   const checkboxes = Array.prototype.slice.call(
@@ -53,8 +53,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         window.location = url;
       })
       .catch((e) => {
-        console.log(e.message);
-        alert(e.message);
+        console.log(e.error);
+        alert(e.error);
       });
   });
 
