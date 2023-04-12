@@ -16,11 +16,11 @@ const app = express();
 const SERVER = process.env.SERVER_URL
 // Middlewares here
 app.use(express.json());
-app.use(
-  cors({
-    origin: `${SERVER}:5500`,
-  })
-);
+// app.use(
+//   cors({
+//     origin: `${SERVER}:5500`,
+//   })
+// );
 
 // Routes here
 app.get("/", (req, res) => {
@@ -37,7 +37,7 @@ app.post("/stripe/pay", async (req, res) => {
   const { price, currency } = req.body;
   if (!price || !currency) {
     console.log("Missing params");
-    res.status(400);
+    res.status(400).json({error:'Missing price, please specify a price'});
   }
   try {
     const session = await stripe.checkout.sessions.create({
@@ -61,6 +61,7 @@ app.post("/stripe/pay", async (req, res) => {
     res.json({ id: session.id, url: session.url });
   } catch (error) {
     console.log(error.message);
+    res.status(500).json({error:'Something went wrong'})
   }
 });
 
@@ -68,7 +69,7 @@ app.post("/paypal/pay", async (req, res) => {
   const { price, currency } = req.body;
   if (!price || !currency) {
     console.log("Missing params");
-    res.status(400);
+    res.status(400).json({error:'Missing price, please specify a price'});
   }
   const create_payment_json = {
     intent: "sale",
@@ -107,7 +108,7 @@ app.post("/pay", (req, res) => {
   const { price, currency } = req.body;
   if (!price || !currency) {
     console.log("Missing params");
-    res.status(400);
+    res.status(400).json({error:'Missing price, please specify a price'});
   }
   const create_payment_json = {
     intent: "sale",
@@ -162,7 +163,7 @@ app.post("/pay", (req, res) => {
       function (error, payment) {
         if (error) {
           console.log(error.response);
-          res.send("error.response")
+          res.status(500).json({error:'something went wrong - Paypal'})
         } else {
           console.log(JSON.stringify(payment));
           res.send("Success");
@@ -173,7 +174,7 @@ app.post("/pay", (req, res) => {
 
   paypal.payment.create(create_payment_json, function (error, payment) {
     if (error) {
-      res.json({error})
+      res.status(500).json({error})
       // throw error;
     } else {
       for (let i = 0; i < payment.links.length; i++) {

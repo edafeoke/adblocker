@@ -1,3 +1,5 @@
+const server = 'https://offgrid-adblocker.herokuapp.com'
+
 document.addEventListener("DOMContentLoaded", async () => {
   const checkboxes = Array.prototype.slice.call(
     document.querySelectorAll(".checkbox")
@@ -32,7 +34,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       alert("Price cannot be empty")
       return
     }
-    fetch("http://127.0.0.1:7000/stripe/pay", {
+    fetch(`${server}/stripe/pay`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -79,7 +81,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     paypalCheckout(price, currency)
   });
   const paypalCheckout = (price, currency)=>{
-    fetch("http://127.0.0.1:7000/pay", {
+    fetch(`${server}/pay`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
