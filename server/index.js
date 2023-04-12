@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 const SERVER = process.env.SERVER_URL
 // Middlewares here
-// app.use(express.json());
+app.use(express.json());
 // app.use(
 //   cors({
 //     origin: `${SERVER}:5500`,
@@ -188,7 +188,6 @@ app.post("/pay", (req, res) => {
 
 app.get("/cancel", (req, res) => res.send("Cancelled"));
 
-// app.listen(process.env.PORT, () =>
-app.listen(7000, () =>
+app.listen(process.env.PORT, () =>
   console.log(`Listening to port ${process.env.PORT}`)
 );
