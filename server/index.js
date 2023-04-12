@@ -33,7 +33,6 @@ app.get("/cancel", (req, res) => {
   res.send("Cancelled by client");
 });
 app.post("/stripe/pay", async (req, res) => {
-  console.log(req.body);
   const { price, currency } = req.body;
   if (!price || !currency) {
     console.log("Missing params");
@@ -61,7 +60,7 @@ app.post("/stripe/pay", async (req, res) => {
     res.json({ id: session.id, url: session.url });
   } catch (error) {
     console.log(error.message);
-    res.status(500).json({error:'Something went wrong'})
+    res.status(500).json({error:error.message})
   }
 });
 
